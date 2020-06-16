@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/home.css') }}">
+    <title>Home</title>
+</head>
+<body>
+<div class="grid-container">
+    <div class="header title">
+        <h1>
+            Home
+        </h1>
+    </div>
+    <div class="form options">
+        <form method="POST">
+            <input type="submit" name="teachers" value="Teachers">
+            <input type="submit" name="rooms" value="Rooms">
+            <input type="submit" name="activities" value="Activities">
+        </form>
+    </div>
+</div>
+</body>
+</html>

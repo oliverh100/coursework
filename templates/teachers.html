@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/teachers.css') }}">
+    <title>Teachers</title>
+</head>
+<body>
+<div class="grid-container">
+    <div class="header title">
+        <h1>
+            Teachers
+        </h1>
+    </div>
+    <div class="form main_options">
+        <form method="POST">
+            <input type="submit" name="add" value="Add Teachers">
+            <input type="submit" name="edit" value="Edit Teachers">
+            <input type="submit" name="delete" value="Delete Teachers">
+        </form>
+    </div>
+{% if add_options %}
+    <div class="form add_options">
+            <form method="POST">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" required><br>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" required><br>
+                <label for="initials">Initials</label>
+                <input type="text" name="initials" id="initials" required><br>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required><br>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required><br>
+                <input type="submit" name="submit_add" value="Submit">
+            </form>
+    </div>
+{% endif %}
+{% if edit_options %}
+    <div class="form edit_options">
+            <form method="POST">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" value="{{ teacher_file[1] }}" required><br>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" value="{{ teacher_file[2] }}" required><br>
+                <label for="initials">Initials</label>
+                <input type="text" name="initials" id="initials" value="{{ teacher_file[3] }}" required><br>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" value="{{ teacher_file[4] }}" required><br>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="{{ teacher_file[5] }}" required><br>
+                <input type="submit" name="submit_edit" value="Submit">
+            </form>
+    </div>
+{% endif %}
+{% if edit_id_options %}
+<div class="form edit_id_options">
+    <form method="POST">
+        <label for="edit_id">ID of teacher to edit</label>
+        <input type="text" name="edit_id" id="edit_id">
+        <input type="submit" name="submit_edit_id" value="Submit">
+    </form>
+</div>
+{% endif %}
+{% if delete_options %}
+<div class="form delete_options">
+    <form method="POST">
+        <label for="delete_id">ID of teacher to delete</label>
+        <input type="text" name="delete_id" id="delete_id">
+        <input type="submit" name="submit_delete" value="Submit">
+    </form>
+</div>
+{% endif %}
+    <div class="table">
+        <table>
+            <tr>
+                <th>teacher_ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Initials</th>
+                <th>Email</th>
+                <th>Title</th>
+            </tr>
+            {% for row in table %}
+            <tr>
+                {% for item in row %}
+                <td>{{ item }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<div class="form back">
+    <form method="POST">
+        <input type="submit" name="back" value="Back Home">
+    </form>
+</div>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert_box">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  {{ messages[0] }}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="326537af-cf64-4a5a-a9ed-e561ff0dd5b2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="activities_database [2]" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="activities_database [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="activities_database [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1blVG1AUF34gbKkxpJ69ZqLbM6p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Oliver\Desktop\coursework_folder" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="coursework_folder" type="Python.FlaskServer">
+      <option name="additionalOptions" value="--host 0.0.0.0" />
+      <option name="flaskDebug" value="true" />
+      <module name="coursework_folder" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Oliver\Desktop\coursework_folder\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="326537af-cf64-4a5a-a9ed-e561ff0dd5b2" name="Default Changelist" comment="" />
+      <created>1589206567253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589206567253</updated>
+      <workItem from="1589206583393" duration="766000" />
+      <workItem from="1589797421520" duration="3037000" />
+      <workItem from="1591797041963" duration="28000" />
+      <workItem from="1591906976316" duration="26000" />
+      <workItem from="1591907722964" duration="1797000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="734" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591906993402">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1591906993402" />
+    <state x="1060" y="456" key="FileChooserDialogImpl" timestamp="1591797065144">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="456" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1591797065144" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1589879399949">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1589879399949" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1589879399949">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1589879399949" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1589879399949">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1589879399949" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1589879399949">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1589879399949" />
+    <state x="615" y="219" key="SettingsEditor" timestamp="1589206952410">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="-1459" y="523" key="SettingsEditor/0.0.2560.1400/-1920.360.1920.1040@-1920.360.1920.1040" timestamp="1589206714048" />
+    <state x="615" y="219" key="SettingsEditor/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1589206952410" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/coursework_folder$coursework_folder.coverage" NAME="coursework_folder Coverage Results" MODIFIED="1589798447561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>

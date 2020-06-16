@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="activities_database [2]">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.17">
+    <root id="1">
+      <ServerVersion>3.25.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="activities"/>
+    <table id="7" parent="2" name="links"/>
+    <table id="8" parent="2" name="rooms"/>
+    <table id="9" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="10" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="11" parent="2" name="teachers"/>
+    <table id="12" parent="2" name="users"/>
+    <column id="13" parent="6" name="activity_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="6" name="activity_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="6" name="room_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="6" name="date_time">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="6" name="max_attendees">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="6" name="food_supplied">
+      <Position>6</Position>
+      <DataType>bool|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="19" parent="6">
+      <ColNames>activity_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="20" parent="6">
+      <ColNames>room_id</ColNames>
+      <RefTableName>rooms</RefTableName>
+      <RefColNames>room_id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="21" parent="7" name="link_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="7" name="activity_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="7" name="teacher_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="7" name="in_charge">
+      <Position>4</Position>
+      <DataType>bool|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="25" parent="7">
+      <ColNames>link_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="7">
+      <ColNames>activity_id</ColNames>
+      <RefTableName>activities</RefTableName>
+      <RefColNames>activity_id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="27" parent="7">
+      <ColNames>teacher_id</ColNames>
+      <RefTableName>teachers</RefTableName>
+      <RefColNames>teacher_id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="28" parent="8" name="room_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="8" name="room_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="8" name="building">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="31" parent="8">
+      <ColNames>room_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="9" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="33" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="34" parent="9" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="35" parent="9" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="36" parent="9" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="37" parent="10" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="38" parent="10" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="39" parent="11" name="teacher_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="11" name="first_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="11" name="last_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="11" name="initials">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="11" name="email">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="11" name="title">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="45" parent="11">
+      <ColNames>teacher_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="12" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="12" name="username">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="12" name="email">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="12" name="hash">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="12">
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

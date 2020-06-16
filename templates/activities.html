@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/activities.css') }}">
+    <title>Activities</title>
+</head>
+<body>
+<div class="grid-container">
+    <div class="header title">
+        <h1>
+            Activities
+        </h1>
+    </div>
+    <div class="form main_options">
+        <form method="POST">
+            <input type="submit" name="add" value="Add Activity">
+            <input type="submit" name="edit" value="Edit Activity">
+            <input type="submit" name="delete" value="Delete Activity">
+        </form>
+    </div>
+{% if add_options %}
+    <div class="form add_options">
+            <form method="POST">
+                <label for="activity_name">Activity Name</label>
+                <input type="text" name="activity_name" id="activity_name" value="{{ activity_file[1] }}" required><br>
+                <label for="room_id">Room ID</label>
+                <input type="text" name="room_id" id="room_id" value="{{ activity_file[2] }}" required><br>
+                <label for="datetime">Datetime</label>
+                <input type="text" name="datetime" id="datetime" value="{{ activity_file[3] }}" required><br>
+                <label for="max_attendees">Max Attendees</label>
+                <input type="text" name="max_attendees" id="max_attendees" value="{{ activity_file[4] }}" required><br>
+                <label for="food_supplied">Food Supplied</label>
+                <input type="text" name="food_supplied" id="food_supplied" value="{{ activity_file[5] }}" required><br>
+                <input type="submit" name="submit_add" value="Submit">
+            </form>
+    </div>
+{% endif %}
+{% if edit_options %}
+    <div class="form edit_options">
+            <form method="POST">
+                <label for="activity_name">Activity Name</label>
+                <input type="text" name="activity_name" id="activity_name" value="{{ activity_file[1] }}" required><br>
+                <label for="room_id">Room ID</label>
+                <input type="text" name="room_id" id="room_id" value="{{ activity_file[2] }}" required><br>
+                <label for="datetime">Datetime</label>
+                <input type="text" name="datetime" id="datetime" value="{{ activity_file[3] }}" required><br>
+                <label for="max_attendees">Max Attendees</label>
+                <input type="text" name="max_attendees" id="max_attendees" value="{{ activity_file[4] }}" required><br>
+                <label for="food_supplied">Food Supplied</label>
+                <input type="text" name="food_supplied" id="food_supplied" value="{{ activity_file[5] }}" required><br>
+                <input type="submit" name="submit_add" value="Submit">
+            </form>
+    </div>
+{% endif %}
+{% if edit_id_options %}
+<div class="form edit_id_options">
+    <form method="POST">
+        <label for="edit_id">ID of activity to edit</label>
+        <input type="text" name="edit_id" id="edit_id">
+        <input type="submit" name="submit_edit_id" value="Submit">
+    </form>
+</div>
+{% endif %}
+{% if delete_options %}
+<div class="form delete_options">
+    <form method="POST">
+        <label for="delete_id">ID of activity to delete</label>
+        <input type="text" name="delete_id" id="delete_id">
+        <input type="submit" name="submit_delete" value="Submit">
+    </form>
+</div>
+{% endif %}
+    <div class="table">
+        <table>
+            <tr>
+                <th>activity_id</th>
+                <th>Activity Name</th>
+                <th>Teacher In Charge</th>
+                <th>Room</th>
+                <th>datetime</th>
+                <th>max attendees</th>
+                <th>food supplied</th>
+            </tr>
+            {% for row in table %}
+            <tr>
+                {% for item in row %}
+                <td>{{ item }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<div class="form back">
+    <form method="POST">
+        <input type="submit" name="back" value="Back Home">
+    </form>
+</div>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert_box">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  {{ messages[0] }}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+</body>
+</html>

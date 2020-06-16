@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/rooms.css') }}">
+    <title>Rooms</title>
+</head>
+<body>
+<div class="grid-container">
+    <div class="header title">
+        <h1>
+            Rooms
+        </h1>
+    </div>
+    <div class="form main_options">
+        <form method="POST">
+            <input type="submit" name="add" value="Add Rooms">
+            <input type="submit" name="edit" value="Edit Rooms">
+            <input type="submit" name="delete" value="Delete Rooms">
+        </form>
+    </div>
+{% if add_options %}
+    <div class="form add_options">
+            <form method="POST">
+                <label for="room_name">Room Name</label>
+                <input type="text" name="room_name" id="room_name" required><br>
+                <label for="building">Building</label>
+                <input type="text" name="building" id="building" required><br>
+                <input type="submit" name="submit_add" value="Submit">
+            </form>
+    </div>
+{% endif %}
+{% if edit_options %}
+    <div class="form edit_options">
+            <form method="POST">
+                <label for="room_name">Room Name</label>
+                <input type="text" name="room_name" id="room_name" value="{{ room_file[1] }}" required><br>
+                <label for="building">Building</label>
+                <input type="text" name="building" id="building"  value="{{ room_file[2] }}"required><br>
+                <input type="submit" name="submit_edit" value="Submit">
+            </form>
+    </div>
+{% endif %}
+{% if edit_id_options %}
+<div class="form edit_id_options">
+    <form method="POST">
+        <label for="edit_id">ID of room to edit</label>
+        <input type="text" name="edit_id" id="edit_id">
+        <input type="submit" name="submit_edit_id" value="Submit">
+    </form>
+</div>
+{% endif %}
+{% if delete_options %}
+<div class="form delete_options">
+    <form method="POST">
+        <label for="delete_id">ID of room to delete</label>
+        <input type="text" name="delete_id" id="delete_id">
+        <input type="submit" name="submit_delete" value="Submit">
+    </form>
+</div>
+{% endif %}
+    <div class="table">
+        <table>
+            <tr>
+                <th>room_ID</th>
+                <th>Room Name</th>
+                <th>Building</th>
+            </tr>
+            {% for row in table %}
+            <tr>
+                {% for item in row %}
+                <td>{{ item }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<div class="form back">
+    <form method="POST">
+        <input type="submit" name="back" value="Back Home">
+    </form>
+</div>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert_box">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  {{ messages[0] }}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+</body>
+</html>
