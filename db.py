@@ -143,16 +143,19 @@ def delete_room(conn, id):
 def select_all_activities(conn):
     cur = conn.cursor()
     cur.execute("SELECT * FROM activities")
-
     results = []
-
     for activity in cur.fetchall():
         activity_id = activity[0]
-        link = select_links(conn, activity_id)
-        results = list(activity)
-        print(link)
-        results.insert(1, link[2])
-
+        link = select_links_in_charge(conn, activity_id)
+        temp = list(activity)
+        temp.insert(2, get_teacher_name(conn, link[2])[0])
+        temp[3] = get_room_name(conn, temp[3])[0]
+        teacher_list = select_links_not_in_charge(conn, activity_id)
+        teacher_list = [get_teacher_name(conn, t_id) for l_id, a_id, t_id, in_charge in teacher_list]
+        temp.append(teacher_list)
+        results.append(temp)
+    # link = (link_id, activity_id, teacher_id, in_charge)
+    # results = (activity_id, activity_name, teacher_in_charge, room, datetime, max, food)
     return results
 
 
@@ -196,11 +199,38 @@ def select_all_links(conn):
     return cur.fetchall()
 
 
-def select_links(conn, activity_id):
+def select_links_in_charge(conn, activity_id):
     sql = "SELECT * FROM links WHERE activity_id=? AND in_charge=1"
     cur = conn.cursor()
 
     cur.execute(sql, (activity_id,))
+
+    return cur.fetchone()
+
+
+def select_links_not_in_charge(conn, activity_id):
+    sql = "SELECT * FROM links WHERE activity_id=? AND in_charge=0"
+    cur = conn.cursor()
+
+    cur.execute(sql, (activity_id,))
+
+    return cur.fetchall()
+
+
+def get_teacher_name(conn, teacher_id):
+    sql = "SELECT last_name FROM teachers WHERE teacher_id=?"
+    cur = conn.cursor()
+
+    cur.execute(sql, (teacher_id,))
+
+    return cur.fetchone()
+
+
+def get_room_name(conn, room_id):
+    sql = "SELECT room_name FROM rooms WHERE room_id=?"
+    cur = conn.cursor()
+
+    cur.execute(sql, (room_id,))
 
     return cur.fetchone()
 
@@ -382,24 +412,25 @@ def main():
         a1 = ('Chess', 1, 'TuesLunch', 12, True)
         a2 = ('Puzzle', 3, 'WedLunch', 6, False)
 
-        l1 = (1, 1, True)
+        # link = (activity_id, teacher_id, in_charge)
+        l1 = (1, 3, True)
         l2 = (1, 2, False)
-        l3 = (2, 2, True)
+        l3 = (2, 1, True)
 
-        # create_teacher(conn, t1)
-        # create_teacher(conn, t2)
-        # create_teacher(conn, t3)
-        #
-        # create_room(conn, r1)
-        # create_room(conn, r2)
-        # create_room(conn, r3)
-        #
-        # create_activity(conn, a1)
-        # create_activity(conn, a2)
-        #
-        # create_link(conn, l1)
-        # create_link(conn, l2)
-        # create_link(conn, l3)
+        create_teacher(conn, t1)
+        create_teacher(conn, t2)
+        create_teacher(conn, t3)
+
+        create_room(conn, r1)
+        create_room(conn, r2)
+        create_room(conn, r3)
+
+        create_activity(conn, a1)
+        create_activity(conn, a2)
+
+        create_link(conn, l1)
+        create_link(conn, l2)
+        create_link(conn, l3)
 
         # create_activity(conn, ('Chess', 4, 'TuesLunch', 12, True))
 
